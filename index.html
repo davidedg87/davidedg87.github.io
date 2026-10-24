@@ -189,6 +189,26 @@ footer{display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px;color:v
 @media (max-width:520px){.duty.strong{grid-column:auto}}
 .duty.full{grid-column:1/-1}
 .cert-group{font-family:var(--f-mono);font-size:.78rem;font-weight:400;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin:8px 0 -12px}
+
+/* animazioni */
+@keyframes rise{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:none}}
+.hero-text>*,.code{animation:rise .7s cubic-bezier(.2,.7,.2,1) both}
+.hero-text>*:nth-child(2){animation-delay:.08s}.hero-text>*:nth-child(3){animation-delay:.16s}.hero-text>*:nth-child(4){animation-delay:.24s}.code{animation-delay:.3s}
+.js .rv{opacity:0;transform:translateY(22px);transition:opacity .7s cubic-bezier(.2,.7,.2,1),transform .7s cubic-bezier(.2,.7,.2,1);transition-delay:var(--d,0s)}
+.js .rv.in{opacity:1;transform:none}
+.card,.duty,.cert{--mx:50%;--my:50%}
+.card::before,.duty::before,.cert::before{content:"";position:absolute;inset:0;border-radius:inherit;pointer-events:none;opacity:0;transition:opacity .3s;background:radial-gradient(420px circle at var(--mx) var(--my),rgba(142,168,255,.12),transparent 45%)}
+.card:hover::before,.duty:hover::before,.cert:hover::before{opacity:1}
+.duty,.cert{position:relative;transition:transform .25s,border-color .25s}
+.duty:hover,.cert:hover{transform:translateY(-3px);border-color:var(--line-2)}
+.row{transition:background .25s,padding-left .25s}
+.row:hover{background:linear-gradient(90deg,rgba(142,168,255,.07),transparent 70%);padding-left:12px}
+.row:hover .when{color:var(--teal)}
+.chips span{transition:border-color .2s,color .2s}
+.card:hover .chips span,.duty:hover .chips span{border-color:var(--line-2);color:var(--ink)}
+pre .cursor{display:inline-block;width:.55em;height:1.1em;background:var(--accent);vertical-align:-.15em;animation:blink 1.1s steps(1) infinite}
+@keyframes blink{50%{opacity:0}}
+@media (prefers-reduced-motion:reduce){.hero-text>*,.code{animation:none}.js .rv{opacity:1;transform:none;transition:none}pre .cursor{animation:none}.row:hover{padding-left:0}}
 </style>
 </head>
 <body>
@@ -224,7 +244,7 @@ footer{display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px;color:v
   <span class="k">string</span>[] Stack =
     [<span class="s">".NET 8"</span>, <span class="s">"Azure"</span>, <span class="s">"Kubernetes"</span>, <span class="s">"Service Bus"</span>];
 
-  <span class="c">// ora: tesi magistrale su AIOps</span>
+  <span class="c">// ora: tesi magistrale su AIOps</span><span class="cursor"></span>
 }</pre>
     </div>
   </header>
@@ -331,5 +351,33 @@ footer{display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px;color:v
   <footer><span>© 2026 Davide Di Gregorio</span><span>Aggiornato a ottobre 2026</span></footer>
 </div>
 
+<script>
+(function(){
+  var reduce=window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches;
+  // luce che segue il puntatore
+  document.querySelectorAll('.card,.duty,.cert').forEach(function(el){
+    el.addEventListener('pointermove',function(e){var r=el.getBoundingClientRect();el.style.setProperty('--mx',(e.clientX-r.left)+'px');el.style.setProperty('--my',(e.clientY-r.top)+'px')});
+  });
+  if(reduce||!('IntersectionObserver' in window))return;
+  document.documentElement.classList.add('js');
+  var sel='.sec-head,.duties-lead,.duty,.card,.stack-col,.cert-group,.cert,.row,.contact';
+  var els=[].slice.call(document.querySelectorAll(sel));
+  els.forEach(function(el){
+    var sib=[].slice.call(el.parentNode.children).filter(function(c){return c.matches(sel)});
+    el.style.setProperty('--d',Math.min(sib.indexOf(el),6)*0.07+'s');
+    el.classList.add('rv');
+  });
+  var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);
+    var b=e.target.querySelector&&e.target.querySelector('.metrics b');}})},{rootMargin:'0px 0px -8% 0px',threshold:.08});
+  els.forEach(function(el){var r=el.getBoundingClientRect();if(r.top<innerHeight)el.classList.add('in');else io.observe(el)});
+  // contatore -80%
+  var m=document.querySelector('.metrics b');
+  if(m&&/80/.test(m.textContent)){
+    var done=false,mo=new IntersectionObserver(function(es){if(es[0].isIntersecting&&!done){done=true;var t0=performance.now();
+      (function step(t){var p=Math.min((t-t0)/1200,1);m.textContent='\u221280'.replace('80',Math.round(80*(1-Math.pow(1-p,3))))+'%';if(p<1)requestAnimationFrame(step)})(t0);}},{threshold:.6});
+    mo.observe(m);
+  }
+})();
+</script>
 </body>
 </html>

@@ -237,13 +237,8 @@ footer{display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px;color:v
       </article>
 
 
-      <article class="card">
-        <div class="card-top"><h3>Multi-agent setup with GitHub Copilot</h3><span class="tag">In progress</span></div>
-        <dl><div><dt>Context</dt><dd>Long, repetitive development tasks, such as code migration, handed to several coordinated agents.</dd></div><div><dt>What I did</dt><dd>Agents, skills and quality gates in the repository, with shared instruction files and local <b>MCP servers</b>. Test runs through GitHub Actions and Codespaces.</dd></div><div><dt>Key decisions</dt><dd>Long sessions were cut off by Windows sleep: PowerShell scripts tied to the process lifecycle keep the machine awake only while the agent is running.</dd></div></dl>
-        <div class="chips"><span>Copilot</span><span>MCP</span><span>GitHub Actions</span><span>PowerShell</span></div>
-      </article>
 
-      <article class="card">
+      <article class="card wide">
         <div class="card-top"><h3>AI agent for incident diagnosis on Kubernetes</h3><span class="tag wip">Thesis in progress</span></div>
         <dl><div><dt>Context</dt><dd>Diagnosing an incident in a microservices system requires knowing how services depend on each other, which is often undocumented.</dd></div><div><dt>What I did</dt><dd>An agent rebuilds the <b>cluster topology</b> from manifests and logs, refreshes it when it goes stale, and uses it to find the root cause of an incident and prepare the <b>fix as a pull request</b>.</dd></div><div><dt>Key decisions</dt><dd>Evaluation with faults injected through Chaos Mesh on demo applications, comparing diagnosis with and without the topology on accuracy, time and cost.</dd></div></dl>
         <div class="chips"><span>Kubernetes</span><span>LLM agents</span><span>Chaos Mesh</span><span>AIOps</span></div>

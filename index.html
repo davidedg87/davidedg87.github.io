@@ -237,13 +237,8 @@ footer{display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px;color:v
       </article>
 
 
-      <article class="card">
-        <div class="card-top"><h3>Ambiente multi-agente con GitHub Copilot</h3><span class="tag">In sviluppo</span></div>
-        <dl><div><dt>Contesto</dt><dd>Attività di sviluppo lunghe e ripetitive, come la migrazione del codice, da affidare a più agenti coordinati.</dd></div><div><dt>Cosa ho fatto</dt><dd>Agenti, skill e gate di controllo nel repository, con file di istruzioni condivisi e <b>server MCP</b> locali. Prove di esecuzione tramite GitHub Actions e Codespaces.</dd></div><div><dt>Scelte chiave</dt><dd>Le sessioni lunghe si interrompevano per la sospensione di Windows: script PowerShell legati al ciclo di vita del processo tengono attiva la macchina solo mentre l'agente lavora.</dd></div></dl>
-        <div class="chips"><span>Copilot</span><span>MCP</span><span>GitHub Actions</span><span>PowerShell</span></div>
-      </article>
 
-      <article class="card">
+      <article class="card wide">
         <div class="card-top"><h3>Agente AI per la diagnosi di incidenti su Kubernetes</h3><span class="tag wip">Tesi in corso</span></div>
         <dl><div><dt>Contesto</dt><dd>Per diagnosticare un incidente su un sistema a microservizi bisogna sapere come i servizi dipendono tra loro, un'informazione spesso non documentata.</dd></div><div><dt>Cosa ho fatto</dt><dd>Un agente ricostruisce la <b>topologia del cluster</b> da manifest e log, la aggiorna quando diventa obsoleta e la usa per trovare la causa di un incidente e preparare la <b>pull request correttiva</b>.</dd></div><div><dt>Scelte chiave</dt><dd>Valutazione con guasti iniettati tramite Chaos Mesh su applicazioni demo, confrontando la diagnosi con e senza topologia per accuratezza, tempo e costo.</dd></div></dl>
         <div class="chips"><span>Kubernetes</span><span>Agenti LLM</span><span>Chaos Mesh</span><span>AIOps</span></div>

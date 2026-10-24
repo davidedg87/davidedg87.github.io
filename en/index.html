@@ -184,6 +184,10 @@ footer{display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px;color:v
 .duty h3{font-size:1.1rem}
 .duty .chips{padding-top:8px}
 .duties{gap:16px}
+.duty.strong{grid-column:span 2;border-color:rgba(142,168,255,.45);background:linear-gradient(135deg,rgba(142,168,255,.10),rgba(94,214,196,.05)),var(--card)}
+.duty-top{display:flex;justify-content:space-between;align-items:flex-start;gap:10px;flex-wrap:wrap}
+@media (max-width:520px){.duty.strong{grid-column:auto}}
+.duty.full{grid-column:1/-1}
 </style>
 </head>
 <body>
@@ -228,12 +232,12 @@ footer{display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px;color:v
     <div class="sec-head"><span class="eyebrow">Day to day</span><h2>What I do</h2></div>
     <p class="duties-lead">Every day I work on the <b>.NET backend</b> of a SaaS platform on <b>Azure</b>: continuous releases and updates of microservices, managed cloud services and monitoring of what runs in production.</p>
     <div class="duties">
+      <div class="duty strong"><div class="duty-top"><h3>Microservice troubleshooting</h3><span class="tag">Strength</span></div><p>When a microservice breaks I look at it from every side: the C# code I have worked on for more than ten years, the .NET microservices context, the pipelines and release configuration. I check services on the cluster with Argo or with kubectl through generative AI tools, and fix incidents together with the project team.</p><div class="chips"><span>C#</span><span>Kubernetes</span><span>kubectl</span><span>Argo</span><span>GenAI</span></div></div>
       <div class="duty"><h3>.NET microservices in production</h3><p>I build, release and continuously update the platform's microservices, from code to deployment on AKS and Container Apps.</p><div class="chips"><span>.NET 8</span><span>ASP.NET Core</span><span>EF Core</span></div></div>
       <div class="duty"><h3>Azure services</h3><p>Asynchronous messaging with Service Bus, exposing and managing APIs with API Management, secrets and configuration with Key Vault.</p><div class="chips"><span>Service Bus</span><span>API Management</span><span>Key Vault</span></div></div>
       <div class="duty"><h3>Logs and metrics</h3><p>I analyze logs, metrics and dependencies with Application Insights to understand how services behave and where a problem starts.</p><div class="chips"><span>Application Insights</span></div></div>
       <div class="duty"><h3>Pipelines and manifests</h3><p>I read release pipelines and Kubernetes manifests and track down errors, even though I am not a DevOps engineer.</p><div class="chips"><span>Azure DevOps</span><span>Kubernetes</span></div></div>
-      <div class="duty"><h3>Production issues</h3><p>I analyze and fix production incidents together with the project team, starting from logs and metrics.</p><div class="chips"><span>Troubleshooting</span></div></div>
-      <div class="duty"><h3>Team</h3><p>I do code reviews, mentor colleagues and take part in technical interviews, including for senior candidates.</p><div class="chips"><span>Code review</span><span>Mentoring</span></div></div>
+      <div class="duty full"><h3>Team</h3><p>I do code reviews, mentor colleagues and take part in technical interviews, including for senior candidates.</p><div class="chips"><span>Code review</span><span>Mentoring</span></div></div>
     </div>
   </section>
 
@@ -276,7 +280,7 @@ footer{display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px;color:v
     <div class="sec-head"><span class="eyebrow">Stack</span><h2>What I work with</h2></div>
     <div class="stack-grid">
       <div class="stack-col"><h4>Backend and data</h4><ul><li>C# / .NET 8</li><li>ASP.NET Core</li><li>EF Core</li><li>SQL · Oracle · PostgreSQL</li></ul></div>
-      <div class="stack-col"><h4>Cloud</h4><ul><li>Microsoft Azure</li><li>Service Bus · Key Vault</li><li>API Management</li><li>Application Insights</li><li>Kubernetes · AKS · Knative</li><li>Container Apps · Docker</li><li>Azure DevOps</li></ul></div>
+      <div class="stack-col"><h4>Cloud</h4><ul><li>Microsoft Azure</li><li>Service Bus · Key Vault</li><li>API Management</li><li>Application Insights</li><li>Kubernetes · AKS · Knative · Argo</li><li>Container Apps · Docker</li><li>Azure DevOps</li></ul></div>
       <div class="stack-col"><h4>AI</h4><ul><li>GitHub Copilot (agents)</li><li>Model Context Protocol</li><li>Azure AI</li></ul></div>
     </div>
   </section>

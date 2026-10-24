@@ -172,6 +172,12 @@ footer{display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px;color:v
 .metrics span{color:var(--muted);font-size:.9rem;margin-top:4px}
 .diagram .ghost{fill:var(--card);stroke:var(--line-2);opacity:.55}
 .diagram .e2{marker-end:url(#ah2)}
+.duties{display:grid;grid-template-columns:repeat(3,1fr);gap:28px 32px}
+@media (max-width:860px){.duties{grid-template-columns:repeat(2,1fr)}}
+@media (max-width:520px){.duties{grid-template-columns:1fr;gap:20px}}
+.duty{border-top:1px solid var(--line-2);padding-top:14px;display:flex;flex-direction:column;gap:6px;min-width:0}
+.duty h3{font-size:1.1rem}
+.duty p{margin:0;color:var(--muted)}
 </style>
 </head>
 <body>
@@ -211,6 +217,19 @@ footer{display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px;color:v
 }</pre>
     </div>
   </header>
+
+  <section id="lavoro">
+    <div class="sec-head"><span class="eyebrow">Day to day</span><h2>What I do</h2></div>
+    <div class="duties">
+      <div class="duty"><h3>New features</h3><p>I build and release features on the .NET microservices of the SaaS platform.</p></div>
+      <div class="duty"><h3>Azure integrations</h3><p>I connect services to the Azure platform, starting with Service Bus and message queues.</p></div>
+      <div class="duty"><h3>Pipelines and manifests</h3><p>I read release pipelines and Kubernetes manifests and track down errors, even though I am not a DevOps engineer.</p></div>
+      <div class="duty"><h3>Production issues</h3><p>I analyze and fix production issues together with the project team.</p></div>
+      <div class="duty"><h3>Code review and mentoring</h3><p>I review my colleagues' code and support them with guidance and mentoring.</p></div>
+      <div class="duty"><h3>Technical interviews</h3><p>I take part in hiring interviews, including for senior candidates.</p></div>
+    </div>
+  </section>
+
 
   <section id="progetti">
     <div class="sec-head"><span class="eyebrow">Projects</span><h2>What I build</h2></div>

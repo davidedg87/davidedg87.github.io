@@ -3,7 +3,23 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<meta name="description" content="Davide Di Gregorio, Software Engineer .NET e Azure">
+<meta name="description" content="Software engineer .NET dal 2013. Prodotti SaaS su Azure per energia e utility, migrazione di sistemi legacy e agenti AI.">
+<link rel="canonical" href="https://davidedg87.github.io/">
+<link rel="alternate" hreflang="it" href="https://davidedg87.github.io/">
+<link rel="alternate" hreflang="en" href="https://davidedg87.github.io/en/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Davide Di Gregorio">
+<meta property="og:title" content="Davide Di Gregorio · Software Engineer">
+<meta property="og:description" content="Software engineer .NET dal 2013. Prodotti SaaS su Azure per energia e utility, migrazione di sistemi legacy e agenti AI.">
+<meta property="og:url" content="https://davidedg87.github.io/">
+<meta property="og:image" content="https://davidedg87.github.io/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Davide Di Gregorio, Software Engineer: .NET, Azure, agenti AI">
+<meta property="og:locale" content="it_IT">
+<meta property="og:locale:alternate" content="en_US">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="author" content="Davide Di Gregorio">
 <title>Davide Di Gregorio</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Hanken+Grotesk:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap">
@@ -33,12 +49,19 @@ a:hover{text-decoration:underline;text-underline-offset:3px}
 :focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:6px}
 
 /* nav */
-nav{display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap}
+nav{display:flex;justify-content:space-between;align-items:center;gap:16px}
+nav .navlinks{margin-left:auto}
 .logo{font-family:var(--f-mono);font-size:.85rem;color:var(--muted)}
 .logo b{color:var(--ink);font-weight:500}
 .navlinks{display:flex;gap:20px;font-size:.92rem}
 .navlinks a{color:var(--muted)}
 .navlinks a:hover{color:var(--ink);text-decoration:none}
+.navlinks a.lang{color:var(--ink);font-family:var(--f-mono);font-size:.8rem;border:1px solid var(--line-2);border-radius:999px;padding:1px 10px}
+.navlinks a.lang:hover{border-color:var(--accent)}
+.navright{display:flex;align-items:center}
+.navright a.lang,.navlinks a.lang{color:var(--ink);font-family:var(--f-mono);font-size:.8rem;border:1px solid var(--line-2);border-radius:999px;padding:3px 12px;text-decoration:none}
+.navright a.lang:hover{border-color:var(--accent)}
+@media (max-width:560px){.navlinks{display:none}}
 
 /* hero */
 .hero{display:grid;grid-template-columns:1.15fr .85fr;gap:48px;align-items:center}
@@ -144,6 +167,7 @@ footer{display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px;color:v
   <nav>
     <span class="logo"><b>davide</b>.digregorio</span>
     <div class="navlinks"><a href="#progetti">Progetti</a><a href="#stack">Stack</a><a href="#certificazioni">Certificazioni</a><a href="#contatti">Contatti</a></div>
+    <div class="navright"><a class="lang" href="/en/" hreflang="en" lang="en">EN</a></div>
   </nav>
 
   <header class="hero">

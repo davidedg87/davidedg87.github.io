@@ -113,6 +113,14 @@ h3{font-family:var(--f-display);font-weight:700;font-size:1.35rem;letter-spacing
 .contact h2{max-width:18ch}
 .mail{font-family:var(--f-mono);font-size:1rem;color:var(--ink);user-select:all}
 footer{display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px;color:var(--muted);font-size:.85rem}
+
+/* certificazioni */
+.certs{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:14px}
+.cert{display:flex;gap:14px;align-items:flex-start;background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px 18px;min-width:0}
+.cert .yr{font-family:var(--f-mono);font-size:.75rem;color:var(--muted);padding-top:3px;min-width:38px;font-variant-numeric:tabular-nums}
+.cert h4{margin:0;font-size:1rem;font-weight:600;line-height:1.35}
+.cert p{margin:2px 0 0;font-size:.85rem;color:var(--muted)}
+.cert.hl{border-color:rgba(142,168,255,.45)}
 </style>
 </head>
 <body>
@@ -122,7 +130,7 @@ footer{display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px;color:v
 <div class="wrap">
   <nav>
     <span class="logo"><b>davide</b>.digregorio</span>
-    <div class="navlinks"><a href="#progetti">Progetti</a><a href="#stack">Stack</a><a href="#contatti">Contatti</a></div>
+    <div class="navlinks"><a href="#progetti">Progetti</a><a href="#stack">Stack</a><a href="#certificazioni">Certificazioni</a><a href="#contatti">Contatti</a></div>
   </nav>
 
   <header class="hero">
@@ -197,7 +205,25 @@ footer{display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px;color:v
     <div class="stack-grid">
       <div class="stack-col"><h4>Backend</h4><ul><li>C# / .NET 8</li><li>ASP.NET Core</li><li>EF Core</li><li>Roslyn</li></ul></div>
       <div class="stack-col"><h4>Cloud</h4><ul><li>Microsoft Azure</li><li>Docker</li><li>AKS</li><li>Azure Container Apps</li><li>Azure DevOps</li></ul></div>
-      <div class="stack-col"><h4>AI e automazione</h4><ul><li>GitHub Copilot (agenti)</li><li>Model Context Protocol</li><li>Claude Code</li><li>PowerShell</li></ul></div>
+      <div class="stack-col"><h4>Frontend</h4><ul><li>Angular</li><li>ASP.NET MVC</li><li>ASP.NET WebForms</li></ul></div>
+      <div class="stack-col"><h4>Database</h4><ul><li>SQL</li><li>Oracle Database</li><li>EF Core</li></ul></div>
+      <div class="stack-col"><h4>AI e automazione</h4><ul><li>Azure AI</li><li>GitHub Copilot (agenti)</li><li>Model Context Protocol</li><li>Claude Code</li><li>PowerShell</li></ul></div>
+    </div>
+  </section>
+
+  <section id="certificazioni">
+    <div class="sec-head"><span class="eyebrow">Certificazioni</span><h2>Cosa ho certificato</h2></div>
+    <div class="certs">
+      <div class="cert hl"><span class="yr">2025</span><div><h4>Azure AI Engineer Associate</h4><p>Microsoft</p></div></div>
+      <div class="cert hl"><span class="yr">2024</span><div><h4>Azure Developer Associate</h4><p>Microsoft</p></div></div>
+      <div class="cert"><span class="yr">2023</span><div><h4>Azure Fundamentals</h4><p>Microsoft</p></div></div>
+      <div class="cert"><span class="yr">2026</span><div><h4>Introduction to Model Context Protocol</h4><p>Anthropic · Claude Academy</p></div></div>
+      <div class="cert"><span class="yr">2026</span><div><h4>Claude Code in Action</h4><p>Anthropic · Claude Academy</p></div></div>
+      <div class="cert"><span class="yr">2026</span><div><h4>Claude Code 101</h4><p>Anthropic · Claude Academy</p></div></div>
+      <div class="cert"><span class="yr">2023</span><div><h4>DevOps Fundamentals</h4><p>PeopleCert</p></div></div>
+      <div class="cert"><span class="yr">2023</span><div><h4>Junior Angular Developer</h4><p>Angular Training</p></div></div>
+      <div class="cert"><span class="yr">2022</span><div><h4>ASP.NET MVC 5 Essential Training</h4><p>LinkedIn Learning</p></div></div>
+      <div class="cert"><span class="yr">2017</span><div><h4>Oracle Database 12c: SQL Fundamentals</h4><p>Oracle</p></div></div>
     </div>
   </section>
 

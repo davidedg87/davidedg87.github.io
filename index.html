@@ -67,6 +67,8 @@ nav .navlinks{margin-left:auto}
 .hero{display:grid;grid-template-columns:1.15fr .85fr;gap:48px;align-items:center}
 @media (max-width:820px){.hero{grid-template-columns:1fr;gap:36px}}
 .hero-text{display:flex;flex-direction:column;gap:22px;min-width:0}
+.me{display:flex;align-items:center;gap:16px;flex-wrap:wrap}
+.avatar{width:76px;height:76px;border-radius:50%;object-fit:cover;border:2px solid var(--line-2);box-shadow:0 0 0 5px rgba(142,168,255,.10)}
 .pill{align-self:flex-start;display:inline-flex;align-items:center;gap:8px;font-size:.82rem;color:var(--muted);border:1px solid var(--line-2);border-radius:999px;padding:5px 12px;background:rgba(18,26,44,.6)}
 .pill i{width:7px;height:7px;border-radius:50%;background:var(--teal);box-shadow:0 0 0 4px rgba(94,214,196,.18)}
 h1{font-family:var(--f-display);font-weight:800;font-size:clamp(2.8rem,8vw,5.2rem);line-height:.95;letter-spacing:-.035em;margin:0;text-wrap:balance}
@@ -172,7 +174,8 @@ footer{display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px;color:v
 
   <header class="hero">
     <div class="hero-text">
-      <span class="pill"><i></i>Software Engineer · Teramo</span>
+      <div class="me"><img class="avatar" src="foto.jpg" alt="Foto di Davide Di Gregorio" width="200" height="200">
+        <span class="pill"><i></i>Software Engineer · Teramo</span></div>
       <h1>Davide<br><span>Di Gregorio</span></h1>
       <p class="lead">Sviluppo su .NET dal 2013, da oltre dieci anni nel settore energia e utility. Oggi lavoro su <b>prodotti SaaS su Azure</b> con architettura a microservizi. Mi occupo anche di <b>modernizzazione di sistemi legacy</b> e di flussi di sviluppo basati su <b>agenti AI</b>.</p>
       <div class="cta">

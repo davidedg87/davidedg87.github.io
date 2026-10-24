@@ -178,6 +178,12 @@ footer{display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px;color:v
 .duty{border-top:1px solid var(--line-2);padding-top:14px;display:flex;flex-direction:column;gap:6px;min-width:0}
 .duty h3{font-size:1.1rem}
 .duty p{margin:0;color:var(--muted)}
+.duties-lead{font-size:1.15rem;color:var(--muted);margin:0;max-width:62ch}
+.duties-lead b{color:var(--ink);font-weight:600}
+.duty{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:20px;border-top:1px solid var(--line)}
+.duty h3{font-size:1.1rem}
+.duty .chips{padding-top:8px}
+.duties{gap:16px}
 </style>
 </head>
 <body>
@@ -220,13 +226,14 @@ footer{display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px;color:v
 
   <section id="lavoro">
     <div class="sec-head"><span class="eyebrow">Ogni giorno</span><h2>Di cosa mi occupo</h2></div>
+    <p class="duties-lead">Lavoro ogni giorno sul <b>backend .NET</b> di una piattaforma SaaS su <b>Azure</b>: rilasci e aggiornamenti continui dei microservizi, servizi cloud gestiti e monitoraggio di ciò che gira in produzione.</p>
     <div class="duties">
-      <div class="duty"><h3>Nuove funzionalità</h3><p>Sviluppo e rilascio funzionalità sui microservizi .NET della piattaforma SaaS.</p></div>
-      <div class="duty"><h3>Integrazioni Azure</h3><p>Collego i servizi alla piattaforma Azure, a partire da Service Bus e dalle code di messaggi.</p></div>
-      <div class="duty"><h3>Pipeline e manifest</h3><p>Leggo le pipeline di rilascio e i manifest Kubernetes e individuo gli errori, anche senza essere DevOps.</p></div>
-      <div class="duty"><h3>Errori in produzione</h3><p>Analizzo e risolvo i problemi in produzione insieme al gruppo di progetto.</p></div>
-      <div class="duty"><h3>Code review e mentoring</h3><p>Reviso il codice dei colleghi e li affianco con supporto e mentoring.</p></div>
-      <div class="duty"><h3>Colloqui tecnici</h3><p>Partecipo ai colloqui di selezione, anche per profili senior.</p></div>
+      <div class="duty"><h3>Microservizi .NET in produzione</h3><p>Sviluppo, rilascio e aggiorno di continuo i microservizi della piattaforma, dal codice al deploy su AKS e Container Apps.</p><div class="chips"><span>.NET 8</span><span>ASP.NET Core</span><span>EF Core</span></div></div>
+      <div class="duty"><h3>Servizi Azure</h3><p>Messaggistica asincrona con Service Bus, gestione sicura di segreti e configurazioni con Key Vault, integrazione dei servizi cloud nella piattaforma.</p><div class="chips"><span>Service Bus</span><span>Key Vault</span></div></div>
+      <div class="duty"><h3>Log e metriche</h3><p>Analizzo log, metriche e dipendenze con Application Insights per capire come si comportano i servizi e dove nasce un problema.</p><div class="chips"><span>Application Insights</span></div></div>
+      <div class="duty"><h3>Pipeline e manifest</h3><p>Leggo le pipeline di rilascio e i manifest Kubernetes e individuo gli errori, anche senza essere DevOps.</p><div class="chips"><span>Azure DevOps</span><span>Kubernetes</span></div></div>
+      <div class="duty"><h3>Errori in produzione</h3><p>Analizzo e risolvo gli incidenti in produzione insieme al gruppo di progetto, partendo da log e metriche.</p><div class="chips"><span>Troubleshooting</span></div></div>
+      <div class="duty"><h3>Team</h3><p>Faccio code review e mentoring ai colleghi e partecipo ai colloqui tecnici, anche per profili senior.</p><div class="chips"><span>Code review</span><span>Mentoring</span></div></div>
     </div>
   </section>
 
@@ -269,7 +276,7 @@ footer{display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px;color:v
     <div class="sec-head"><span class="eyebrow">Stack</span><h2>Con cosa lavoro</h2></div>
     <div class="stack-grid">
       <div class="stack-col"><h4>Backend e dati</h4><ul><li>C# / .NET 8</li><li>ASP.NET Core</li><li>EF Core</li><li>SQL · Oracle · PostgreSQL</li></ul></div>
-      <div class="stack-col"><h4>Cloud</h4><ul><li>Microsoft Azure</li><li>Azure Service Bus</li><li>Kubernetes · AKS · Knative</li><li>Container Apps · Docker</li><li>Azure DevOps</li></ul></div>
+      <div class="stack-col"><h4>Cloud</h4><ul><li>Microsoft Azure</li><li>Service Bus · Key Vault</li><li>Application Insights</li><li>Kubernetes · AKS · Knative</li><li>Container Apps · Docker</li><li>Azure DevOps</li></ul></div>
       <div class="stack-col"><h4>AI</h4><ul><li>GitHub Copilot (agenti)</li><li>Model Context Protocol</li><li>Azure AI</li></ul></div>
     </div>
   </section>

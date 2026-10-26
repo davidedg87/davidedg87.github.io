@@ -217,6 +217,8 @@ pre .cursor{display:inline-block;width:.55em;height:1.1em;background:var(--accen
 .split{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,.85fr);gap:36px;align-items:start}
 .split.rev{grid-template-columns:minmax(0,.85fr) minmax(0,1.15fr)}
 .split.rev .split-text{order:2}
+.diagram.shot{padding:8px}.diagram.shot img{display:block;width:100%;height:auto;border-radius:9px}
+.links{margin:0;font-size:.92rem}
 .split-text{display:flex;flex-direction:column;gap:18px;min-width:0}
 .card.wide .split dl{display:flex;flex-direction:column;gap:14px}
 .split .diagram{margin:0;position:sticky;top:24px}
@@ -333,6 +335,18 @@ pre .cursor{display:inline-block;width:.55em;height:1.1em;background:var(--accen
             <div class="chips"><span>Kubernetes</span><span>LLM agents</span><span>Chaos Mesh</span><span>AIOps</span></div>
           </div>
           <div class="diagram" role="img" aria-label="Graph of cluster services: an error appears on the gateway, the agent walks the dependencies back to the payments service, the root cause, and prepares a pull request"><svg class="v" viewBox="0 0 340 356" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><line class="g-edge trace t1" x1="170" y1="44" x2="84" y2="128"/><line class="g-edge " x1="170" y1="44" x2="256" y2="128"/><line class="g-edge " x1="84" y1="128" x2="256" y2="214"/><line class="g-edge " x1="256" y1="128" x2="256" y2="214"/><line class="g-edge trace t2" x1="84" y1="128" x2="84" y2="214"/><g class="g-node sym"><circle cx="170" cy="44" r="20"/><text class="t2" x="170" y="80" text-anchor="middle">gateway</text></g><g class="g-node "><circle cx="84" cy="128" r="20"/><text class="t2" x="56" y="132" text-anchor="end">orders</text></g><g class="g-node "><circle cx="256" cy="128" r="20"/><text class="t2" x="256" y="164" text-anchor="middle">catalog</text></g><g class="g-node root"><circle cx="84" cy="214" r="20"/><text class="t2" x="84" y="250" text-anchor="middle">payments</text></g><g class="g-node "><circle cx="256" cy="214" r="20"/><text class="t2" x="256" y="250" text-anchor="middle">database</text></g><text class="g-badge sym-b" x="198" y="30">error 500</text><text class="g-badge root-b" x="56" y="186" text-anchor="end">root cause</text><path class="g-edge trace t3" d="M84 252 V296"/><g class="n out g-agent"><rect x="30" y="296" width="280" height="54" rx="12"/><text class="t1" x="46" y="320">AI agent</text><text class="t2" x="46" y="336">topology → cause → PR</text><text class="g-pr" x="292" y="328" text-anchor="end">PR ✓</text></g></svg></div>
+        </div>
+      </article>
+
+      <article class="card wide">
+        <div class="card-top"><div><span class="kicker">Personal project · used every day</span><h3>A timesheet that fills itself with Azure DevOps hours</h3></div><span class="tag daily">In use</span></div>
+        <div class="split rev">
+          <div class="split-text">
+            <dl><div><dt>Context</dt><dd>Worked hours are scattered across the <b>Completed Work</b> of Azure DevOps tasks, while holidays, leave and work outside tasks have to be tracked separately. Rebuilding the month by hand is slow and error-prone.</dd></div><div><dt>What I did</dt><dd>A web app that rebuilds hours day by day from task revisions through the <b>Azure DevOps REST APIs</b>, merges them with manually entered absences and <b>pushes back to the tasks</b> the hours written in the diary. Month view, sprints taken from iterations, charts and CSV export.</dd></div><div><dt>Key decisions</dt><dd><b>No backend</b>: a static page on GitHub Pages, with data in a JSON file in the user's <b>private GitHub repo</b> and a three-way merge when saving from several devices. Before writing to a task it checks the revision, so it never overwrites someone else's changes.</dd></div></dl>
+            <div class="chips"><span>JavaScript</span><span>Azure DevOps REST API</span><span>GitHub Pages</span><span>PWA</span></div>
+            <p class="links"><a href="https://davidedg87.github.io/riepilogo-attivita/" target="_blank" rel="noopener">Open the app ↗</a> · <a href="https://github.com/davidedg87/riepilogo-attivita" target="_blank" rel="noopener">Code on GitHub ↗</a></p>
+          </div>
+          <div class="diagram shot"><img src="../timesheet.jpg" alt="DevOps Timesheet screenshot: October diary with task hours split by day and sprint" loading="lazy" width="1000" height="640"></div>
         </div>
       </article>
     </div>

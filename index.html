@@ -167,7 +167,7 @@ footer{display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px;color:v
 @media (max-width:760px){.card.wide dl{display:flex}}
 .stack-grid{grid-template-columns:repeat(auto-fit,minmax(220px,1fr))}
 .metrics{display:flex;flex-wrap:wrap;gap:12px 40px;padding:16px 0 4px;border-top:1px solid var(--line)}
-.metrics div{display:flex;flex-direction:column}
+.metrics div{display:flex;flex-direction:column;max-width:15rem}
 .metrics b{font-family:var(--f-display);font-weight:800;font-size:2.4rem;line-height:1;letter-spacing:-.03em;color:var(--teal)}
 .metrics span{color:var(--muted);font-size:.9rem;margin-top:4px}
 .diagram .ghost{fill:var(--card);stroke:var(--line-2);opacity:.55}
@@ -300,11 +300,11 @@ pre .cursor{display:inline-block;width:.55em;height:1.1em;background:var(--accen
     <div class="bento">
 
       <article class="card wide">
-        <div class="card-top"><div><span class="kicker">Migrazione automatizzata da WebForms a .NET 8</span><h3>Centinaia di pagine WebForms portate su .NET 8 da una squadra di agenti AI</h3></div><span class="tag daily">In produzione</span></div>
+        <div class="card-top"><div><span class="kicker">Migrazione da ASP.NET WebForms a .NET 8</span><h3>Dalla logica di backend WebForms alle API .NET, con una pipeline verificabile</h3></div><span class="tag daily">In produzione</span></div>
         <div class="split">
           <div class="split-text">
-            <dl><div><dt>Contesto</dt><dd>Applicazioni ASP.NET WebForms di grandi dimensioni da portare su .NET 8. Farlo a mano, pagina per pagina, è lento e soggetto a errori.</dd></div><div><dt>Cosa ho fatto</dt><dd>Ho progettato la pipeline insieme a un collega: <b>agenti orchestratori</b>, <b>subagent dedicati</b>, skill e hook che analizzano il codice, ne ricostruiscono le dipendenze e portano le pagine su <b>.NET 8</b>. Tutto è distribuito al team tramite un repository interno aziendale.</dd></div><div><dt>Scelte chiave</dt><dd>Analisi in due fasi: prima una scansione leggera del markup, poi <b>Roslyn</b> solo dove serve un'analisi semantica. Gli agenti si passano report Markdown strutturati che fanno da contratto, con gate di verifica tra le fasi.</dd></div></dl>
-            <div class="metrics"><div><b>−80%</b><span>tempo di sviluppo</span></div><div><b>Centinaia</b><span>di pagine convertite</span></div></div>
+            <dl><div><dt>Contesto</dt><dd>Il prodotto on-premise per le utility (billing, credito, metering e altro) ha funzionalità complesse: logiche di business, task schedulati, report, CRUD. Portarle a mano nel nuovo framework SaaS, nel rispetto degli standard della nostra architettura, è lento e soggetto a errori. Mi occupo solo della logica di backend: il frontend segue altri flussi.</dd></div><div><dt>Cosa ho fatto</dt><dd>Ho progettato con un collega una pipeline che converte in automatico intere pagine o singole parti dell'applicativo in API <b>.NET</b>, con i relativi unit test. Gli agenti AI sono uno strumento della pipeline, non il suo centro. Tutto è distribuito al team tramite un repository interno aziendale.</dd></div><div><dt>Scelte chiave</dt><dd>Analisi in due fasi: prima una scansione leggera del markup, poi <b>Roslyn</b> solo dove serve un'analisi semantica. Le fasi si passano report Markdown strutturati che fanno da contratto, con gate di verifica che fermano gli errori prima che si propaghino.</dd></div></dl>
+            <div class="metrics"><div><b>−80%</b><span>di tempo rispetto alla conversione manuale, sviluppo e unit test inclusi</span></div><div><b>8 su 10</b><span>conversioni senza modifiche manuali</span></div><div><b>100+</b><span>pagine convertite</span></div></div>
             <div class="chips"><span>C#</span><span>Roslyn</span><span>GitHub Copilot</span><span>.NET 8</span></div>
           </div>
           <div class="diagram" role="img" aria-label="Flusso: file .aspx e code-behind, scansione del markup, analisi Roslyn, grafo delle dipendenze, agenti GitHub Copilot che si passano report Markdown, gate di verifica, codice .NET 8">
